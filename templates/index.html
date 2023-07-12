@@ -77,29 +77,24 @@
         <main>
 
             <!-- Formulario de Contactenos -->
-            <section id="formulario-contactenos">
-                <article>
-                      <h3>Contáctanos</h3>
-                      <form id="formu-cont" action="" method="post">
-                         <input type="text" id="nombre" placeholder="Nombre Completo">
-                         <input type="email" id="correo" placeholder="Correo Electronico">
-                         <input type="tel" id="telefono" placeholder="Número Celular">
-                          <select id="asunto">
-                             <option>Servicio</option>
-                             <option value="mas-info">Prescolar</option>
-                             <option value="ser-distribuidor">Primaria</option>
-                             <option value="pagos-otra-ciudad">Secundaria</option>
-                             <option value="cotizacion">Universidad</option>
-                          </select>
-                         <textarea rows="3" id="mensaje" placeholder="Descripción"></textarea>
-                         <input type="number" id="nombre" placeholder="Presupuesto">
-                         <br>
-                        <center><input type="submit" id="enviar" value="Enviar"></center>
-                      </form>
-                </article>
-            </section>
+            <div class="contenedor">
+              <form action="/guardar" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+          
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" />
+          
+                <label for="carrera">Carrera:</label>
+                <input type="text" id="carrera" name="carrera" />
+                
+                <label for="carrera">Comentarios:</label>
+                <input type="text" id="comentario" name="comentario" />
+                <input type="submit" value="Guardar" />
+                </form>
+            </div>
 
-
+<br><br>
             <!-- Componente Sección tipo Menú a 2 Columnas -->
             <section id="burger" class="menu">
                 <div id="ancla-burger"></div>
@@ -113,7 +108,7 @@
                             <img src="{{ url_for('static', filename='img/prescolar.jpg')}}">
                             <div class="info-producto">
                                 <h5 class="reco">Servicios</h5>
-                                <h4>Prescolar</h4>
+                                <h4>Preescolar</h4>
                                 <p class="texto-producto">Apoyo educativo de calidad para preescolares, fomentando el aprendizaje creativo y el desarrollo integral.</p>
                             </div>
                         </figure>
@@ -183,38 +178,38 @@
                 <div id="ancla-beverages"></div>
                 <article>
                     <div class="zona-titulos">
-                        <h3>Métodos Pagos</h3>
+                        <h3>Métodos de Pagos</h3>
                     </div>
                         <center>
-                    <div class="zona-menu">
+                    <div class="zona-menu" style="text-align: center; margin-left: 170px;">
                         <figure>
-                            <img src="img/Nequi.png">
+                            <img src="{{ url_for('static', filename='img/Nequi.png')}}">
                             <div class="info-producto">
-                                <h5 class="reco">Pagos</h5>
+                                
                                 <h4>Nequi</h4>
                             </div>
                         </figure>
 
                         <figure>
-                            <img src="img/davivienda.jpg">
+                            <img src="{{ url_for('static', filename='img/davivienda.jpg')}}">
                             <div class="info-producto">
-                                <h5 class="reco">Pagos</h5>
+                                
                                 <h4>Davivienda</h4>
                             </div>
                         </figure>
 
                         <figure>
-                            <img src="img/daviplata.png">
+                            <img src="{{ url_for('static', filename='img/daviplata.png')}}">
                             <div class="info-producto">
-                                <h5 class="reco">Pagos</h5>
+                                
                                 <h4>Daviplata</h4>
                             </div>
                         </figure>
 
                         <figure>
-                            <img src="img/efecty.png">
+                            <img src="{{ url_for('static', filename='img/efecty.png')}}">
                             <div class="info-producto">
-                                <h5 class="reco">Pagos</h5>
+                                
                                 <h4>Efecty</h4>
                             </div>
                         </figure>
@@ -222,6 +217,7 @@
                     </div>
                 </article>
             </section>
+            <center>
             <div class="container">
               <table>
                 <thead>
@@ -261,6 +257,7 @@
                 </tbody>
                 
               </table>
+            </center>
             </div>
         
             <!-- Componente Destacados 3 Columnas -->
@@ -328,5 +325,6 @@
 
         <!-- Cargar JS propio -->
         <script src="js/script.js"></script>
+        
     </body>
 </html>

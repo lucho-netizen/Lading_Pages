@@ -1,12 +1,16 @@
 body {
-    background-color: #f4f4f4;
+    
     font-family: Arial, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    background-color: #e7c896;
+
 }
 
 h1 {
     color: #333333;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 form {
@@ -16,7 +20,7 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 400px;
     margin: 0 auto;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 label {
@@ -35,7 +39,7 @@ input[type="submit"] {
     font-size: 16px;
     margin-bottom: 20px;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 .rating {
@@ -93,8 +97,8 @@ table {
     width: 60%;
     border-collapse: collapse;
     border-spacing: 0;
-    margin-left: 400px;
-    right: 100px;
+    /* margin-left: 400px; */
+    /* right: 100px; */
 
 }
 
@@ -102,7 +106,7 @@ th,
 td {
     padding: 12px 15px;
     text-align: left;
-    font-family: Courier New, 'Courier', monospace;
+    /* font-family: Courier New, 'Courier', monospace; */
 
 
 }
@@ -421,7 +425,7 @@ header {
     top: 0;
     left: 0;
     z-index: 99990;
-    background-color: #4e3ea9;
+    background-color: #8b7de1;
     no-repeat: bottom center transparent;
     background-size: cover;
 }
