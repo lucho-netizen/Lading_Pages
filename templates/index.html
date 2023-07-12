@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guardar datos</title>
+    <style>
+      body {
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: #333333;
+      }
+
+      form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #555555;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      .rating {
+        display: inline-block;
+        unicode-bidi: bidi-override;
+        direction: rtl;
+      }
+
+      .rating > input {
+        display: none;
+      }
+
+      .rating > label {
+        color: #888888;
+        font-size: 30px;
+        padding: 5px;
+        float: right;
+        cursor: pointer;
+      }
+
+      .rating > input:checked ~ label,
+      .rating:not(:checked) > label:hover,
+      .rating:not(:checked) > label:hover ~ label {
+        color: #ffc107;
+      }
+
+      .rating > input:checked + label:hover,
+      .rating > input:checked ~ label:hover,
+      .rating > label:hover ~ input:checked ~ label,
+      .rating > input:checked ~ label:hover ~ label {
+        color: #ffc107;
+      }
+
+      input[type="submit"] {
+        background-color: #ffc107;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #ffa000;
+      }
+      table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Guardar datos</h1>
+    <form action="/guardar" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" />
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" />
+
+      <label for="puntuacion">Puntuación:</label>
+      <center>
+        <div class="rating">
+          <input type="radio" id="star5" name="puntuacion" value="5" />
+          <label for="star5">☆</label>
+          <input type="radio" id="star4" name="puntuacion" value="4" />
+          <label for="star4">☆</label>
+          <input type="radio" id="star3" name="puntuacion" value="3" />
+          <label for="star3">☆</label>
+          <input type="radio" id="star2" name="puntuacion" value="2" />
+          <label for="star2">☆</label>
+          <input type="radio" id="star1" name="puntuacion" value="1" />
+          <label for="star1">☆</label>
+        </div>
+      </center>
+      <input type="submit" value="Guardar" />
+    </form>
+    
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Puntuación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for date in date %}
+            <td>{{date.1}}</td>
+            <td>{{date.2}}</td>
+            <td>
+                {% if date.3 == '5' %}
+                    ★★★★★
+                {% elif date.3 == '4' %}
+                    ★★★★☆
+                {% elif date.3 == '3' %}
+                    ★★★☆☆
+                {% elif date.3 == '2' %}
+                    ★★☆☆☆
+                {% elif dates.3 == '1' %}
+                    ★☆☆☆☆
+                {% else %}
+                    Sin puntuación
+                {% endif %}
+            </td>
+          </tr>
+
+            {% endfor %}
+        </tbody>
+        
+      </table>
+    </div>
+    
+  </body>
+</html>
