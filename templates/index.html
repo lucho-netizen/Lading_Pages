@@ -1,117 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Guardar datos</title>
-    <style>
-      body {
-        background-color: #f4f4f4;
-        font-family: Arial, sans-serif;
-      }
-
-      h1 {
-        color: #333333;
-      }
-
-      form {
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        width: 400px;
-        margin: 0 auto;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 10px;
-        color: #555555;
-      }
-
-      input[type="text"],
-      input[type="number"],
-      input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #cccccc;
-        border-radius: 4px;
-        font-size: 16px;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-      }
-
-      .rating {
-        display: inline-block;
-        unicode-bidi: bidi-override;
-        direction: rtl;
-      }
-
-      .rating > input {
-        display: none;
-      }
-
-      .rating > label {
-        color: #888888;
-        font-size: 30px;
-        padding: 5px;
-        float: right;
-        cursor: pointer;
-      }
-
-      .rating > input:checked ~ label,
-      .rating:not(:checked) > label:hover,
-      .rating:not(:checked) > label:hover ~ label {
-        color: #ffc107;
-      }
-
-      .rating > input:checked + label:hover,
-      .rating > input:checked ~ label:hover,
-      .rating > label:hover ~ input:checked ~ label,
-      .rating > input:checked ~ label:hover ~ label {
-        color: #ffc107;
-      }
-
-      input[type="submit"] {
-        background-color: #ffc107;
-        color: #ffffff;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #ffa000;
-      }
-      .container {
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-
-        tr:nth-child(even) {
-            background-color: #ffffff;
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta charset="UTF-8">
+    <title>Mis taresas</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
   </head>
   <body>
-    <h1>Guardar datos</h1>
+    <h1>Mis Tareas</h1>
+    {% if msg %}
+    <p style="text-align: center; color: black;">
+        {{ msg }}
+    </p>
+    {% endif %}
+    
     <form action="/guardar" method="POST">
       <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" />
+      <input type="text" id="nombre" name="nombre" required />
 
       <label for="apellido">Apellido:</label>
       <input type="text" id="apellido" name="apellido" />
+
+      <label for="carrera">Carrera:</label>
+      <input type="text" id="carrera" name="carrera" />
+      
+      <label for="carrera">Comentarios:</label>
+      <input type="text" id="comentario" name="comentario" />
+
+     
 
       <label for="puntuacion">Puntuación:</label>
       <center>
@@ -130,35 +47,40 @@
       </center>
       <input type="submit" value="Guardar" />
     </form>
-    
+    <br>
+    <br>
     <div class="container">
       <table>
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Apellido</th>
+            <th>Carrera</th>
+            <th>Comentarios</th>
             <th>Puntuación</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             {% for date in date %}
-            <td>{{date.1}}</td>
-            <td>{{date.2}}</td>
+            <td> {{ date.1 }} {{ date.2 }} </td>
+            <td>{{ date.4 }}</td>
+            <td>{{ date.5 }}</td>
             <td>
+              <div class="feedback-rating">
                 {% if date.3 == '5' %}
-                    ★★★★★
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                 {% elif date.3 == '4' %}
-                    ★★★★☆
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
                 {% elif date.3 == '3' %}
-                    ★★★☆☆
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
                 {% elif date.3 == '2' %}
-                    ★★☆☆☆
+                <span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
                 {% elif date.3 == '1' %}
-                    ★☆☆☆☆
+                <span class="star">★</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
                 {% else %}
-                    Sin puntuación
+                    <td>Sin puntuación</td>
                 {% endif %}
+              </div>
             </td>
           </tr>
 
@@ -167,6 +89,26 @@
         
       </table>
     </div>
-    
+
+    <div class="container-services">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda in veniam asperiores maxime optio doloremque repellat eius possimus aliquid obcaecati!</p>
+    </div>
+    <script>
+       window.addEventListener('contextmenu', function (e) {
+            e.preventDefault(); // Evita que aparezca el menú contextual
+            showCustomMessage(); // Muestra el mensaje personalizado
+        });
+
+        function showCustomMessage() {
+            var customMessage = document.createElement('div');
+            customMessage.className = 'custom-message';
+            customMessage.textContent = 'La función, está deshabilitado en esta página.';
+            document.body.appendChild(customMessage);
+
+            setTimeout(function () {
+                customMessage.parentNode.removeChild(customMessage);
+            }, 3000); // Oculta el mensaje después de 3 segundos
+        }
+  </script>
   </body>
 </html>

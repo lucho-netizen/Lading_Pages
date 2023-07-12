@@ -18,12 +18,12 @@ app.secret_key = 'ghjklñ'
 
 # Ruta para mostrar el formulario
 @app.route('/')
-def mostrar_formulario():
+def index():
     cursor = mysql.connection.cursor()
-    sql = "SELECT * FROM comentarios"
+    sql = "SELECT * FROM comentarios ORDER by id DESC"
     cursor.execute(sql)
     date = cursor.fetchall()
-    return render_template('index.html', date = date)
+    return render_template('index.html', date= date)
 
 # Ruta para guardar los datos en la base de datos
 @app.route('/guardar', methods=['POST'])
@@ -32,24 +32,19 @@ def guardar_datos():
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         puntuacion = request.form['puntuacion']
+        carrera = request.form['carrera']
+        comentario = request.form['comentario']
         
         # Crear el cursor para ejecutar consultas
         cursor = mysql.connection.cursor()
 
         # Crear la consulta SQL para guardar los datos
-        consulta = "INSERT INTO comentarios (nombre, apellido, puntuacion) VALUES (%s, %s, %s)"
-        cursor.execute(consulta, (nombre, apellido, puntuacion))
+        consulta = "INSERT INTO comentarios (nombre, apellido, puntuacion, carrera, comentario) VALUES (%s, %s, %s, %s, %s)"
+        cursor.execute(consulta, (nombre, apellido, puntuacion, carrera, comentario))
         mysql.connection.commit()
-
-        # Obtener los datos guardados desde la base de datos
-        consulta = "SELECT * FROM comentarios"
-        cursor.execute(consulta)
-        date = cursor.fetchall()
-        date = date
-
-        # Cerrar el cursor
+        msg ='El comentario se ha insertado correctamente!'
         cursor.close()
-    return render_template('index.html', date=date)
+    return redirect(url_for('index', msg=msg))
 
 
 
