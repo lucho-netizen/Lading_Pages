@@ -42,7 +42,7 @@ def guardar_datos():
         mysql.connection.commit()
 
         # Obtener los datos guardados desde la base de datos
-        consulta = "SELECT nombre, apellido, puntuacion FROM comentarios"
+        consulta = "SELECT * FROM comentarios"
         cursor.execute(consulta)
         date = cursor.fetchall()
         date = date
