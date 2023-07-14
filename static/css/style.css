@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0%;
     padding: 0%;
-    background-color: #e7c896;
+    
 }
 
 h1 {
@@ -13,10 +13,10 @@ h1 {
 }
 
 form {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     width: 400px;
     margin: 0 auto;
     /* font-family: 'Courier New', Courier, monospace; */
@@ -953,6 +953,122 @@ main section#formulario-contactenos article form#formu-cont input#nombre:focus,
 main section#formulario-contactenos article form#formu-cont input#correo:focus,
 main section#formulario-contactenos article form#formu-cont input#telefono:focus,
 main section#formulario-contactenos article form#formu-cont textarea#mensaje:focus {
+    outline: none;
+    background: #979368;
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
+
+main section#formulario-feedback {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    float: none;
+    position: relative;
+    font-family:'Courier New', Courier, monospace;
+}
+
+main section#formulario-feedback article {
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    float: none;
+    position: relative;
+}
+
+main section#formulario-feedback article h3 {
+    text-align: center;
+    font-size: 3.15em;
+    line-height: 1em;
+    padding: 0 0 7px 0;
+    color: #000;
+    letter-spacing: -0.01em;
+    font-weight: 900;
+}
+
+main section#formulario-feedback article form#formu-cont {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    float: none;
+    position: relative;
+    padding: 70px 0;
+}
+
+main section#formulario-feedback article form#formu-cont input#nombre,
+main section#formulario-feedback article form#formu-cont input#apellido,
+main section#formulario-feedback article form#formu-cont input#comentario,
+main section#formulario-feedback article form#formu-cont input#carrera {
+    width: 93%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    float: none;
+    position: relative;
+    border: none;
+    background: #e2e2e2;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 13px 3%;
+}
+
+main section#formulario-feedback article form#formu-cont select#asunto {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0px 0 10px;
+    float: none;
+    border: none;
+    background: #e2e2e2;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 13px 3%;
+}
+
+main section#formulario-feedback article form#formu-cont select#asunto option {}
+
+main section#formulario-feedback article form#formu-cont textarea#mensaje {
+    width: 94%;
+    height: 70px;
+    display: block;
+    margin: 0 auto 10px;
+    float: none;
+    position: relative;
+    border: none;
+    background: #e2e2e2;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 13px 3%;
+}
+
+main section#formulario-feedback article form#formu-cont input#enviar {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0;
+    float: none;
+    /* position: relative; */
+    border: none;
+    background: #16e439;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 13px 3%;
+    letter-spacing: 0.35em;
+    transition: all 0.3s ease-in;
+}
+
+main section#formulario-feedback article form#formu-cont input#enviar:hover {
+    background: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+
+main section#formulario-feedback article form#formu-cont input#nombre:focus,
+main section#formulario-feedback article form#formu-cont input#correo:focus,
+main section#formulario-feedback article form#formu-cont input#telefono:focus,
+main section#formulario-feedback article form#formu-cont textarea#mensaje:focus {
     outline: none;
     background: #979368;
     color: #fff;

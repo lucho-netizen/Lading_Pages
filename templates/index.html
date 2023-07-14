@@ -59,7 +59,7 @@
             <article>
                 <figure>
                     <a href="index.html">
-                        <img src="{{ url_for('static', filename='img/logo.png')}}"">
+                        <img src="{{ url_for('static', filename='img/logo.png')}}">
                     </a>
                 </figure>
 
@@ -77,80 +77,85 @@
         <main>
 
             <!-- Formulario de Contactenos -->
-            <div class="contenedor">
-              <form action="/guardar" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required />
-          
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" />
-          
-                <label for="carrera">Carrera:</label>
-                <input type="text" id="carrera" name="carrera" />
-                
-                <label for="carrera">Comentarios:</label>
-                <input type="text" id="comentario" name="comentario" />
-                <input type="submit" value="Guardar" />
-                </form>
-            </div>
-
-<br><br>
-            <!-- Componente Sección tipo Menú a 2 Columnas -->
-            <section id="burger" class="menu">
-                <div id="ancla-burger"></div>
+            <section id="formulario-contactenos">
                 <article>
-                    <div class="zona-titulos">
-                        <h3>Servicios</h3>
-                    </div>
-
-                     <div class="zona-menu" style="text-align: justify;">
-                        <figure>
-                            <img src="{{ url_for('static', filename='img/prescolar.jpg')}}">
-                            <div class="info-producto">
-                                <h5 class="reco">Servicios</h5>
-                                <h4>Preescolar</h4>
-                                <p class="texto-producto">Apoyo educativo de calidad para preescolares, fomentando el aprendizaje creativo y el desarrollo integral.</p>
-                            </div>
-                        </figure>
-
-                        <figure>
-                            <img src="{{ url_for('static', filename='img/primaria.jpg')}}">
-                            <div class="info-producto">
-                                <h5 class="reco">Servicios</h5>
-                                <h4>Primaria</h4>
-                                <p class="texto-producto">Ayudamos con tareas de primaria, brindando apoyo educativo para un aprendizaje exitoso.</p>
-                            </div>
-                        </figure>
-
-                        <figure>
-                            <img src="{{ url_for('static', filename='img/secundaria.jpg')}}">
-                            <div class="info-producto">
-                                <h5 class="reco">Servicios</h5>
-                                <h4>Secundaria</h4>
-                                <p class="texto-producto">Ofrecemos ayuda con tareas de secundaria, promoviendo el éxito académico y el desarrollo integral del estudiante.</p>
-                            </div>
-                        </figure>
-
-                        <figure>
-                            <img src="{{ url_for('static', filename='img/Universidad.jpg')}}">
-                            <div class="info-producto">
-                                <h5 class="reco">Servicios</h5>
-                                <h4>Universidad</h4>
-                                <p class="texto-producto">Brindamos asistencia académica en tareas universitarias, potenciando el rendimiento y el éxito en los estudios superiores.</p>
-                            </div>
-                        </figure>
-
-                        <figure>
-                            <img src="{{ url_for('static', filename='img/categorias.png')}}">
-                            <div class="info-producto">
-                                <h5 class="reco">Servicios</h5>
-                                <h4>Categorias</h4>
-                                <p class="texto-producto">Proyectos Universitarios, Ensayos - Tesis, Diapositivas - Carteleras, Manualidades, Pedagogía, Ciencias Sociales, Español, Filosofía, Informática, Ética, Matemáticas, Inglés, Ingeniería, Administración, Psicología.</p>
-                            </div>
-                        </figure>
-                    </div>
+                      <h3>Contactenos</h3>
+                      <form id="formu-cont" action="https://formsubmit.co/icsgamesxd@gmail.com" method="POST">
+                         <input type="" id="nombre" name="Nombre" placeholder="Nombre Completo">
+                         <input type="email" id="correo" name="Email" placeholder="Correo Electronico">
+                         <input type="tel" id="telefono" name="Telefono" placeholder="Teléfono">
+                          <select id="asunto" name="Servicio">
+                             <option>Servicio</option>
+                             <option value="mas-info">Prescolar</option>
+                             <option value="ser-distribuidor">Primaria</option>
+                             <option value="pagos-otra-ciudad">Secundaria</option>
+                             <option value="cotizacion">Universidad</option>
+                          </select>
+                         <textarea rows="3" id="mensaje" name="Descripción" placeholder="Descripción"></textarea>
+                         <input type="submit" id="enviar" value="ENVIAR">
+                         <input type="hidden" name="_next" value="http://localhost:5000">
+                         <input type="hidden" name="_captcha" value="false">
+                      </form>
                 </article>
             </section>
+
+   <!-- Componente Sección tipo Menú a 2 Columnas -->
+   <section id="burger" class="menu">
+    <div id="ancla-burger"></div>
+    <article>
+        <div class="zona-titulos">
+            <h3>Servicios</h3>
+        </div>
+
+         <div class="zona-menu" style="text-align: justify;">
+            <figure>
+                <img src="{{ url_for('static', filename='img/prescolar.jpg')}}">
+                <div class="info-producto">
+                    <h5 class="reco">Servicios</h5>
+                    <h4>Preescolar</h4>
+                    <p class="texto-producto">Apoyo educativo de calidad para preescolares, fomentando el aprendizaje creativo y el desarrollo integral.</p>
+                </div>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='img/primaria.jpg')}}">
+                <div class="info-producto">
+                    <h5 class="reco">Servicios</h5>
+                    <h4>Primaria</h4>
+                    <p class="texto-producto">Ayudamos con tareas de primaria, brindando apoyo educativo para un aprendizaje exitoso.</p>
+                </div>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='img/secundaria.jpg')}}">
+                <div class="info-producto">
+                    <h5 class="reco">Servicios</h5>
+                    <h4>Secundaria</h4>
+                    <p class="texto-producto">Ofrecemos ayuda con tareas de secundaria, promoviendo el éxito académico y el desarrollo integral del estudiante.</p>
+                </div>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='img/Universidad.jpg')}}">
+                <div class="info-producto">
+                    <h5 class="reco">Servicios</h5>
+                    <h4>Universidad</h4>
+                    <p class="texto-producto">Brindamos asistencia académica en tareas universitarias, potenciando el rendimiento y el éxito en los estudios superiores.</p>
+                </div>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='img/categorias.png')}}">
+                <div class="info-producto">
+                    <h5 class="reco">Servicios</h5>
+                    <h4>Categorias</h4>
+                    <p class="texto-producto">Proyectos Universitarios, Ensayos - Tesis, Diapositivas - Carteleras, Manualidades, Pedagogía, Ciencias Sociales, Español, Filosofía, Informática, Ética, Matemáticas, Inglés, Ingeniería, Administración, Psicología.</p>
+                </div>
+            </figure>
+        </div>
+    </article>
+</section>
+
 
 
            <!--  Componente seccion tipo 3 columnas -->
@@ -174,18 +179,18 @@
             </section>
 
             <!-- Componente Sección tipo menu a 2 Columnas -->
-            <section id="beverages" class="menu" style="text-align: center; margin-left: 20px;">
+            <section id="beverages" class="menu">
                 <div id="ancla-beverages"></div>
                 <article>
                     <div class="zona-titulos">
-                        <h3>Métodos de Pagos</h3>
+                        <h3>Métodos Pagos</h3>
                     </div>
-                        <center>
-                    <div class="zona-menu" style="text-align: center; margin-left: 170px;">
+
+                    <div class="zona-menu">
                         <figure>
                             <img src="{{ url_for('static', filename='img/Nequi.png')}}">
                             <div class="info-producto">
-                                
+                                <h5 class="reco">Pagos</h5>
                                 <h4>Nequi</h4>
                             </div>
                         </figure>
@@ -193,7 +198,7 @@
                         <figure>
                             <img src="{{ url_for('static', filename='img/davivienda.jpg')}}">
                             <div class="info-producto">
-                                
+                                <h5 class="reco">Pagos</h5>
                                 <h4>Davivienda</h4>
                             </div>
                         </figure>
@@ -201,7 +206,7 @@
                         <figure>
                             <img src="{{ url_for('static', filename='img/daviplata.png')}}">
                             <div class="info-producto">
-                                
+                                <h5 class="reco">Pagos</h5>
                                 <h4>Daviplata</h4>
                             </div>
                         </figure>
@@ -209,100 +214,91 @@
                         <figure>
                             <img src="{{ url_for('static', filename='img/efecty.png')}}">
                             <div class="info-producto">
-                                
+                                <h5 class="reco">Pagos</h5>
                                 <h4>Efecty</h4>
                             </div>
                         </figure>
-                    </center>
                     </div>
                 </article>
             </section>
-            <center>
-            <div class="container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Nombre</th>
-                    <th>Carrera</th>
-                    <th>Comentarios</th>
-                    <th>Puntuación</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    {% for date in date %}
-                    <td> {{ date.1 }} {{ date.2 }} </td>
-                    <td>{{ date.4 }}</td>
-                    <td>{{ date.5 }}</td>
-                    <td>
-                      <div class="feedback-rating">
-                        {% if date.3 == '5' %}
-                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-                        {% elif date.3 == '4' %}
-                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
-                        {% elif date.3 == '3' %}
-                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
-                        {% elif date.3 == '2' %}
-                        <span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
-                        {% elif date.3 == '1' %}
-                        <span class="star">★</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
-                        {% else %}
-                            <td>Sin puntuación</td>
-                        {% endif %}
-                      </div>
-                    </td>
-                  </tr>
-        
-                    {% endfor %}
-                </tbody>
-                
-              </table>
-            </center>
-            </div>
-        
+
             <!-- Componente Destacados 3 Columnas -->
-            <BR></BR><BR></BR><BR></BR>
-            {% if msg %}
-            <p style="text-align: center; color: black;">
-                {{ msg }}
-            </p>
-            {% endif %}
+            <center>
+                <div class="container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Carrera</th>
+                        <th>Comentarios</th>
+                        <th>Puntuación</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        {% for date in date %}
+                        <td> {{ date.1 }} {{ date.2 }} </td>
+                        <td>{{ date.4 }}</td>
+                        <td>{{ date.5 }}</td>
+                        <td>
+                          <div class="feedback-rating">
+                            {% if date.3 == '5' %}
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            {% elif date.3 == '4' %}
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                            {% elif date.3 == '3' %}
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+                            {% elif date.3 == '2' %}
+                            <span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                            {% elif date.3 == '1' %}
+                            <span class="star">★</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                            {% else %}
+                                <td>Sin puntuación</td>
+                            {% endif %}
+                          </div>
+                        </td>
+                      </tr>
             
-            <form action="/guardar" method="POST">
-              <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" name="nombre" required />
-        
-              <label for="apellido">Apellido:</label>
-              <input type="text" id="apellido" name="apellido" />
-        
-              <label for="carrera">Carrera:</label>
-              <input type="text" id="carrera" name="carrera" />
-              
-              <label for="carrera">Comentarios:</label>
-              <input type="text" id="comentario" name="comentario" />
-        
-             
-        
-              <label for="puntuacion">Puntuación:</label>
-              <center>
-                <div class="rating">
-                  <input type="radio" id="star5" name="puntuacion" value="5" />
-                  <label for="star5">☆</label>
-                  <input type="radio" id="star4" name="puntuacion" value="4" />
-                  <label for="star4">☆</label>
-                  <input type="radio" id="star3" name="puntuacion" value="3" />
-                  <label for="star3">☆</label>
-                  <input type="radio" id="star2" name="puntuacion" value="2" />
-                  <label for="star2">☆</label>
-                  <input type="radio" id="star1" name="puntuacion" value="1" />
-                  <label for="star1">☆</label>
+                        {% endfor %}
+                    </tbody>
                 </div>
-              </center>
-              <input type="submit" value="Guardar" />
-            </form>
-        
+                  </table>
+                 </center>
+            
+            
+                <br><br><br><br>
+                
+            <section id="formulario-feedback">
+                <article>
+                      <h3>Comentarios</h3>
+                      <form id="formu-cont" action="/guardar" method="POST">
+                         <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                         <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+                         <input type="text" id="carrera" name="carrera" placeholder="Carrera">
+                         <input type="text" id="comentario" name="comentario" placeholder="Comentarios">
+                                  
+                        <label for="puntuacion">Puntuación:</label>
+                  <center>
+                    <div class="rating">
+                      <input type="radio" id="star5" name="puntuacion" value="5" />
+                      <label for="star5">☆</label>
+                      <input type="radio" id="star4" name="puntuacion" value="4" />
+                      <label for="star4">☆</label>
+                      <input type="radio" id="star3" name="puntuacion" value="3" />
+                      <label for="star3">☆</label>
+                      <input type="radio" id="star2" name="puntuacion" value="2" />
+                      <label for="star2">☆</label>
+                      <input type="radio" id="star1" name="puntuacion" value="1" />
+                      <label for="star1">☆</label>
+                    </div>
+                  </center>
+                  <input type="submit" value="Guardar" />
+                      </form>
+                </article>
+            </section>
+
         </main>
-<br><br><br>
+
         <!-- Componente Footer Logo al Centro -->
         <footer>
             <figure>
@@ -324,7 +320,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
         <!-- Cargar JS propio -->
-        <script src="js/script.js"></script>
-        
+        <script src="../static/js/script.js"></script>
     </body>
 </html>
