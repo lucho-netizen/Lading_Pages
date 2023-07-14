@@ -998,6 +998,7 @@ main section#formulario-feedback article form#formu-cont {
 main section#formulario-feedback article form#formu-cont input#nombre,
 main section#formulario-feedback article form#formu-cont input#apellido,
 main section#formulario-feedback article form#formu-cont input#comentario,
+main section#formulario-feedback article form#formu-cont input#puntuacion,
 main section#formulario-feedback article form#formu-cont input#carrera {
     width: 93%;
     height: auto;
