@@ -39,8 +39,8 @@
             </a>
             
             <nav>
-                <a href="index.html">Inicio</a>
-                <a href="servicios.html">Servicios</a>
+                <a href="{{ url_for('index') }}">Inicio</a>
+                <a href="{{ url_for('servicios') }}">Servicios</a>
                 <a href="#ancla-beverages">Pagos</a>
                 <a href="#formulario-contactenos">Contactenos</a>
                 <a href=".formulario-feedback">Comentarios</a>
@@ -64,8 +64,8 @@
                 </figure>
 
                 <nav>
-                    <a href="index.html">Inicio</a>
-                    <a href="servicios.html">Servicios</a>
+                    <a href="{{ url_for('index') }}">Inicio</a>
+                    <a href="{{ url_for('servicios') }}">Servicios</a>
                     <a href="#ancla-beverages">Pagos</a>
                     <a href="#formulario-contactenos">Contactenos</a>
                     <a href=".formulario-feedback">Comentarios</a>
@@ -92,7 +92,7 @@
                              <option value="cotizacion">Universidad</option>
                           </select>
                          <textarea rows="3" id="mensaje" name="descripcion" placeholder="Descripción"></textarea>
-                         <input type="submit" id="enviar" value="ENVIAR">
+                         <center><input type="submit" id="enviar" value="ENVIAR"></center>
                          <input type="hidden" name="_next" value="http://localhost:5000">
                          <input type="hidden" name="_captcha" value="false">
                       </form>

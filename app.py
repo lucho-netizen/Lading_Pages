@@ -25,6 +25,13 @@ def index():
     date = cursor.fetchall()
     return render_template('index.html', date= date)
 
+@app.route('/servicios')
+def servicios():
+    return render_template('servicios.html')
+
+
+
+
 # Ruta para guardar los datos en la base de datos
 @app.route('/guardar', methods=['POST'])
 def guardar_datos():
@@ -45,7 +52,6 @@ def guardar_datos():
         msg ='El comentario se ha insertado correctamente!'
         cursor.close()
     return redirect(url_for('index', msg=msg))
-
 
 
 
