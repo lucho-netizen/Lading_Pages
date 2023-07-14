@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Título de página -->
+        <title>Servicios</title>
+        <meta title="Parcial 1er corte">
+        <!-- Codificación de caracteres > Caracteres especiales en Español -->
+        <meta charset="utf-8">
+        
+        <!-- Cargar ícono de favoritos -->
+        <link rel="icon" href="{{ url_for('static', filename='img/libro.png')}}">
+
+        <!-- Meta para bloquear el Zoom Out -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Enlace a librería desde CDN: PrefixFree -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+        <!-- Enlace a librería de íconos: FontAwesome Icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+        <!-- Enlace a librería de fuentes tipográficas: Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Permanent+Marker&family=Roboto:wght@100;300;400;500;700;900&family=Kufam:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- Cargar CSS propio -->
+        <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Componente Menú Hamburguesa -->
+        <aside id="menu-hamburguesa">
+            <a href="#" id="abrir">
+                <i class="fas fa-bars"></i>
+            </a>
+
+            <a href="#" id="cerrar">
+                <i class="fas fa-times"></i>
+            </a>
+            
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="index.html">Pagos</a>
+                <a href="index.html">Contactenos</a>
+                <a href="index.html">Comentarios</a>
+            </nav>
+        </aside>
+
+        <!-- Componente Botón WhatsApp -->
+        <aside id="boton-whatsapp">
+            <a href="https://api.whatsapp.com/send?phone=573016954853" target="_blank">
+                <i id="boton-whatsapp-i" class="fab fa-whatsapp"></i>
+            </a>
+        </aside>
+
+        <!-- Componente Header Logo y Menú -->
+        <header>
+            <article>
+                <figure>
+                    <a href="index.html">
+                        <img src="{{ url_for('static', filename='img/logo.png')}}">
+                    </a>
+                </figure>
+
+                <nav>
+                    <a href="index.html">Inicio</a>
+                    <a href="servicios.html">Servicios</a>
+                    <a href="index.html">Pagos</a>
+                    <a href="index.html">Contactenos</a>
+                    <a href="index.html">Comentarios</a>
+                </nav>
+            </article>
+        </header>
+
+        <!-- Caja Main -->
+        <main>
+            <!-- Componente Sección tipo Menú a 2 Columnas -->
+            <section id="burger" class="menu">
+                <div id="ancla-burger"></div>
+                <article>
+                    <div class="zona-titulos">
+                        <h3>Servicios</h3>
+                    </div>
+
+                    <div class="zona-menu" style="text-align: justify;">
+                        <figure>
+                            <img src="{{ url_for('static', filename='img/prescolar.jpg')}}">
+                            <div class="info-producto">
+                                <h5 class="reco">Servicios</h5>
+                                <h4>Preescolar</h4>
+                                <p class="texto-producto">Apoyo educativo de calidad para preescolares, fomentando el aprendizaje creativo y el desarrollo integral.</p>
+                            </div>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ url_for('static', filename='img/primaria.jpg')}}">
+                            <div class="info-producto">
+                                <h5 class="reco">Servicios</h5>
+                                <h4>Primaria</h4>
+                                <p class="texto-producto">Ayudamos con tareas de primaria, brindando apoyo educativo para un aprendizaje exitoso.</p>
+                            </div>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ url_for('static', filename='img/secundaria.jpg')}}">
+                            <div class="info-producto">
+                                <h5 class="reco">Servicios</h5>
+                                <h4>Secundaria</h4>
+                                <p class="texto-producto">Ofrecemos ayuda con tareas de secundaria, promoviendo el éxito académico y el desarrollo integral del estudiante.</p>
+                            </div>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ url_for('static', filename='img/Universidad.jpg')}}">
+                            <div class="info-producto">
+                                <h5 class="reco">Servicios</h5>
+                                <h4>Universidad</h4>
+                                <p class="texto-producto">Brindamos asistencia académica en tareas universitarias, potenciando el rendimiento y el éxito en los estudios superiores.</p>
+                            </div>
+                        </figure>
+
+                        <figure>
+                            <img src="{{ url_for('static', filename='img/categorias.png')}}">
+                            <div class="info-producto">
+                                <h5 class="reco">Servicios</h5>
+                                <h4>Categorias</h4>
+                                <p class="texto-producto">Proyectos Universitarios, Ensayos - Tesis, Diapositivas - Carteleras, Manualidades, Pedagogía, Ciencias Sociales, Español, Filosofía, Informática, Ética, Matemáticas, Inglés, Ingeniería, Administración, Psicología.</p>
+                            </div>
+                        </figure>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <!-- Componente Footer Logo al Centro -->
+        <footer>
+            <figure>
+                <a href="index.html">
+                    <img src="">
+                </a>
+
+                <h6>Developed by SoftDevCode S.A.S</h6>
+            </figure>
+        </footer>
+
+        <!-- Zona de JavaScript -->
+
+        <!-- 1°: LLamado a jQuery desde un CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- 2°: Llamado a librerías hijo de jQuery -->
+        <!-- jQuery Easing desde CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <!-- Cargar JS propio -->
+        <script src="../static/js/script.js"></script>
+    </body>
+</html>
