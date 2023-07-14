@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <!-- Título de página -->
-        <title>Tareas</title>
+        <title>Inicio</title>
         <meta title="Parcial 1er corte">
         <!-- Codificación de caracteres > Caracteres especiales en Español -->
         <meta charset="utf-8">
@@ -40,10 +40,10 @@
             
             <nav>
                 <a href="index.html">Inicio</a>
-                <a href="#ancla-burger">Servicios</a>
+                <a href="servicios.html">Servicios</a>
                 <a href="#ancla-beverages">Pagos</a>
                 <a href="#formulario-contactenos">Contactenos</a>
-                <a href="#formulario-contactenos">Comentarios</a>
+                <a href="#formulario-feedback">Comentarios</a>
             </nav>
         </aside>
 
@@ -65,10 +65,10 @@
 
                 <nav>
                     <a href="index.html">Inicio</a>
-                    <a href="#ancla-burger">Servicios</a>
+                    <a href="servicios.html">Servicios</a>
                     <a href="#ancla-beverages">Pagos</a>
                     <a href="#formulario-contactenos">Contactenos</a>
-                    <a href="#formulario-contactenos">Comentarios</a>
+                    <a href="#formulario-feedback">Comentarios</a>
                 </nav>
             </article>
         </header>
@@ -100,64 +100,7 @@
             </section>
 
    <!-- Componente Sección tipo Menú a 2 Columnas -->
-   <section id="burger" class="menu">
-    <div id="ancla-burger"></div>
-    <article>
-        <div class="zona-titulos">
-            <h3>Servicios</h3>
-        </div>
-
-         <div class="zona-menu" style="text-align: justify;">
-            <figure>
-                <img src="{{ url_for('static', filename='img/prescolar.jpg')}}">
-                <div class="info-producto">
-                    <h5 class="reco">Servicios</h5>
-                    <h4>Preescolar</h4>
-                    <p class="texto-producto">Apoyo educativo de calidad para preescolares, fomentando el aprendizaje creativo y el desarrollo integral.</p>
-                </div>
-            </figure>
-
-            <figure>
-                <img src="{{ url_for('static', filename='img/primaria.jpg')}}">
-                <div class="info-producto">
-                    <h5 class="reco">Servicios</h5>
-                    <h4>Primaria</h4>
-                    <p class="texto-producto">Ayudamos con tareas de primaria, brindando apoyo educativo para un aprendizaje exitoso.</p>
-                </div>
-            </figure>
-
-            <figure>
-                <img src="{{ url_for('static', filename='img/secundaria.jpg')}}">
-                <div class="info-producto">
-                    <h5 class="reco">Servicios</h5>
-                    <h4>Secundaria</h4>
-                    <p class="texto-producto">Ofrecemos ayuda con tareas de secundaria, promoviendo el éxito académico y el desarrollo integral del estudiante.</p>
-                </div>
-            </figure>
-
-            <figure>
-                <img src="{{ url_for('static', filename='img/Universidad.jpg')}}">
-                <div class="info-producto">
-                    <h5 class="reco">Servicios</h5>
-                    <h4>Universidad</h4>
-                    <p class="texto-producto">Brindamos asistencia académica en tareas universitarias, potenciando el rendimiento y el éxito en los estudios superiores.</p>
-                </div>
-            </figure>
-
-            <figure>
-                <img src="{{ url_for('static', filename='img/categorias.png')}}">
-                <div class="info-producto">
-                    <h5 class="reco">Servicios</h5>
-                    <h4>Categorias</h4>
-                    <p class="texto-producto">Proyectos Universitarios, Ensayos - Tesis, Diapositivas - Carteleras, Manualidades, Pedagogía, Ciencias Sociales, Español, Filosofía, Informática, Ética, Matemáticas, Inglés, Ingeniería, Administración, Psicología.</p>
-                </div>
-            </figure>
-        </div>
-    </article>
-</section>
-
-
-
+   
            <!--  Componente seccion tipo 3 columnas -->
             <section id="combos">
                 <div id="ancla-combos"></div>
@@ -270,7 +213,7 @@
             
                 <br><br><br><br>
                 
-                <section id="formulario-contactenos">
+                <section id="formulario-contactenos" class="formulario-feedback">
                     <article>
                           <h3>Comentarios</h3>
                           <form id="formu-cont" action="/guardar" method="POST">
