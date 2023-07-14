@@ -1,5 +1,4 @@
 body {
-    
     font-family: Arial, sans-serif;
     margin: 0%;
     padding: 0%;
@@ -882,6 +881,9 @@ main section#formulario-contactenos article form#formu-cont {
 
 main section#formulario-contactenos article form#formu-cont input#nombre,
 main section#formulario-contactenos article form#formu-cont input#correo,
+main section#formulario-contactenos article form#formu-cont input#apellido,
+main section#formulario-contactenos article form#formu-cont input#carrera,
+main section#formulario-contactenos article form#formu-cont input#comentario,
 main section#formulario-contactenos article form#formu-cont input#telefono {
     width: 93%;
     height: auto;
